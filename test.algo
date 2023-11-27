@@ -1,4 +1,4 @@
-ALGORITHM checkpointalgo1
+ALGORITHM analyse_de_phrase
 VAR
 //declaration de variables
     set_declarations
