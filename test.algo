@@ -1,41 +1,22 @@
-// ALGORITHM checkpointalgo1
-// VAR
-//     set_declarations
-//     phrase:STRING;
-//     nbr_voyelle:INTEGER;
-//     nbr_mot:INTEGER;
-// BEGIN
-//     set_instructions
-//         write("Donnez une phrase se terminant par un point (.)")
-//         read(phrase)
-//         IF (phrase[phrase.length] !==".") THEN
-//             set_instructions
-//                  write("vous devez donnez une phrase")
-//                   read(phrase)
-//         END_IF
-//         nbr_mot:=1
-//             FOR i FROM 0 TO tab.length STEP 1  DO
-//             IF (phrase[i]===" ") THEN
-//                 set_instructions
-//                 nbr_mot=nbr_mot+1
-//             END_IF
-
-// END
 ALGORITHM checkpointalgo1
 VAR
+//declaration de variables
     set_declarations
     phrase:STRING;
     nbr_mot,nbr_voyelle:INTEGER;
 
 BEGIN
+//déclaration des boucles for et des if 
     set_instructions
+    //pour dire à l'utilisateur d'écrire une phrase
     Write("Donne moi une phrase avec un .")
     Read(phrase)
+    //pour si l'utilisateur ne met pas de . à sa phrase
     IF (phrase[phrase.length]!== ".") THEN
         set_instructions
         Write("Ta phrase n'a pas de .")
     END_IF
-    
+//pour trouver le nombre de mot
     nbr_mot:=1
 
     FOR i FROM 0 TO phrase.length STEP 1  DO
@@ -47,13 +28,13 @@ BEGIN
     END_FOR
 
     Write("le nombre de mot est", nbr_mot)
-
+//pour trouver le nombre de voyelle
     nbr_voyelle:=1
     FOR i FROM 0 TO phrase.length STEP 1  DO
         set_instructions
-        IF (phrase[i] == "ygygyyg") THEN
-            set_instructions
-            nbr_voyelle:=nbr_voyelle+1
+        IF (phrase[i] == "a"||"e"||"i"||"o"||"u"||"y") THEN
+        nbr_voyelle:=nbr_voyelle+1
         END_IF
+        Write("Le nombre de voyelle est de:"nbr_voyelle)
     END_FOR
 END
