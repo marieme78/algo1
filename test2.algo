@@ -1,0 +1,39 @@
+
+ALGORITHM somofdistinct
+VAR
+//Déclarations des éléments
+    sumdistinct, sum: INTEGER;
+    ensemble1: ARRAY_OF INTEGER[4];
+    ensemble2: ARRAY_OF INTEGER[5];
+    verify1, verify2: BOOLEAN;
+    ensembledistinct: ARRAY_OF INTEGER[5];
+
+BEGIN
+// Donnez les valeurs aux éléments déclarés
+    sumdistinct := 0;
+    sum := 0;
+    verify1 := TRUE;
+    ensemble1 := [2, 3, 4, 5];
+    ensemble2 := [2, 3, 4, 5, 6];
+
+    FOR i FROM 1 TO LENGTH(ensemble1) DO
+        FOR j FROM 1 TO LENGTH(ensemble2) DO
+            IF ensemble1[i] = ensemble2[j] THEN
+                verify1 := FALSE;
+                EXIT;  // Sortir de la boucle interne si un élément est trouvé
+            END_IF
+        END_FOR
+
+            IF verify1 === TRUE THEN
+            sumdistinct := sumdistinct + ensemble1[i];
+        FOR j FROM 1 TO LENGTH STEP (ensemble2)  DO
+                FOR i FROM 1 TO LENGTH(ensemble1) DO
+                IF ensemble2[j] =ensemble1[i] THEN
+                    verify1:= FALSE;
+                    EXIT; //sortir de la boucle si un  élément est trouvé
+                END_IF
+            END_FOR
+
+            END_IF
+        END_FOR
+END

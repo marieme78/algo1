@@ -13,11 +13,14 @@ BEGIN
     Write("Donne moi une phrase avec un.")
     Read(phrase)
     //pour si l'utilisateur ne met pas de . à sa phrase
-    IF (phrase[phrase[i]]!== ".") THEN
+    IF (phrase[phrase.length-1]!== ".") THEN
         set_instructions
         Write("Ta phrase n'a pas de .")
-
-    END_IF
+        REPEAT
+        Write("Donne moi une phrase avec un.")
+    Read(phrase)
+            
+        UNTIL (phrase[phrase[i]]!== ".")
 
 //pour trouver le nombre de mot
     nbr_mot:=1
@@ -37,7 +40,7 @@ BEGIN
     nbr_voyelle:=0
     FOR i FROM 0 TO phrase.length STEP 1  DO
         set_instructions
-        IF (phrase[i] == "a"||"e"||"i"||"o"||"u"||"y") THEN
+        IF ((phrase[i] == "a")or (phrase[i] == "e")or(phrase[i] == "i")or(phrase[i] == "o")or(phrase[i] == "e")or(phrase[i] == "u")or(phrase[i] == "y")) THEN
         nbr_voyelle:=nbr_voyelle+1
         END_IF
         Write("Le nombre de voyelle est de:"nbr_voyelle)
